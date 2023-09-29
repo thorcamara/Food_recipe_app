@@ -154,3 +154,30 @@ h1 {
   text-align: justify;
   padding: 18px;
 }
+
+.recipe-img img {
+  max-width: 50%;
+  display: block;
+  margin: 0 auto 40px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+.recipe-video {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.recipe-video a {
+  padding: 10px 20px;
+  background-color: #ff5722;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
