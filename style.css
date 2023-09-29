@@ -181,3 +181,7 @@ h1 {
   border-radius: 10px;
   transition: all 0.3s ease;
 }
+
+.recipe-video a:hover {
+  background-color: #e64a19;
+}
