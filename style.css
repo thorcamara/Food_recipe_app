@@ -134,3 +134,23 @@ h1 {
   text-align: center;
   margin-bottom: 5px;
 }
+
+.recipe-category {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.recipe-instruct h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.recipe-instruct p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: justify;
+  padding: 18px;
+}
