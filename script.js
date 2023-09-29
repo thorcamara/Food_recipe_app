@@ -30,7 +30,6 @@ async function searchMealsByIngredient(ingredient) {
     const data = await response.json();
     return data.meals;
   } catch (error) {
-    // Show error in console
     console.error('Error fetching data:', error);
   }
 }
@@ -62,3 +61,46 @@ function displayMeals(meals) {
     mealList.innerHTML = '<p>No meals found. Try another ingredient.</p>';
   }
 }
+
+function showMealDetailsPopup(meal) {
+  mealDetailsContent.innerHTML = `
+      <h2 class="recipe-title">${meal.strMeal}</h2>
+      <p class="recipe-category">${meal.strCategory}</p>
+      <div class="recipe-instruct">
+          <h3>Instructions:</h3>
+          <p>${meal.strInstructions}</p>
+      </div>
+      <div class="recipe-img">
+          <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+      </div>
+      <div class="recipe-video">
+          <a href="${meal.strYoutube}" target="_blank">Video Tutorial</a>
+      </div>
+  `;
+  modalContainer.style.display = 'block';
+}
+
+recipeCloseBtn.addEventListener('click', closeRecipeModal);
+
+function closeRecipeModal() {
+  modalContainer.style.display = 'none';
+}
+
+searchInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    performSearch();
+  }
+});
+
+async function performSearch() {
+  const ingredient = searchInput.value.trim();
+  if (ingredient) {
+    const meals = await searchMealsByIngredient(ingredient);
+    displayMeals(meals);
+  }
+}
+
+window.addEventListener('load', () => {
+  searchInput.value = 'chicken';
+  performSearch();
+});
