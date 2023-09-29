@@ -185,3 +185,29 @@ h1 {
 .recipe-video a:hover {
   background-color: #e64a19;
 }
+
+@media screen and (width < 980px) {
+
+  .meal-item {
+    flex-basis: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    margin: 0;
+  }
+
+  .search input {
+    width: 80%;
+  }
+
+  .search button {
+    width: 20%;
+  }
+}
+
+@media screen and (width < 540px) {
+
+  .meal-item {
+    flex-basis: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+  }
+
+}
